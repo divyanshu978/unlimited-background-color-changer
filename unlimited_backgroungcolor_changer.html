@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button{
+            text-align: center;
+           
+        }
+        .container{
+            text-align: center;
+        }
+    </style>
+</head>
+<div class="container">
+<body style="background-color: black; color: white;">
+    <h1>random color changer  of background </h1><br>
+    <button id="start">start</button>
+    <button id="stop">stop</button>
+</div>
+</body>
+<script>
+   const name = function(){
+       const color = document.querySelector("body")
+      const  color_changer = Math.round(Math.random()*16777215).toString(16)
+      color.style.backgroundColor= "#" + color_changer;
+    //    color.style.background="red"
+    //    color.style.background="green"
+    //    color.style.background="blue"
+    }
+    document.querySelector("#start").addEventListener("click",function(){
+        set= setInterval(name ,1000)
+    })
+    document.querySelector("#stop").addEventListener("click",function(){
+        clearInterval(set)
+    })
+</script>
+</html>
